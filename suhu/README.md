@@ -1,7 +1,7 @@
 # suhu
 Hasil :
 
-![.Plot](./Hasil.//a.jpg)
+![.Plot](./Hasil/a.jpg)
 ![.Plot](./Hasil/b.jpg)
 
 
