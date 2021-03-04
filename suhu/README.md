@@ -1,7 +1,13 @@
 # suhu
 Hasil :
+JOBSHEET 4
+![.Plot](./Hasil2/A.jpg)
+![.Plot](./Hasil2/B.jpg)
+![.Plot](./Hasil2/C.jpg)
 
-![.Plot](./Hasil.//a.jpg)
+
+JOBSHEET 3
+![.Plot](./Hasil/a.jpg)
 ![.Plot](./Hasil/b.jpg)
 
 
