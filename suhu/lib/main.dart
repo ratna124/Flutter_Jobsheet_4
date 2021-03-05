@@ -4,6 +4,7 @@ import 'widgets/input.dart';
 import 'widgets/result.dart';
 import 'widgets/convert.dart';
 import 'widgets/riwayat.dart';
+import 'widgets/dropdownconversi.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,6 +38,13 @@ class _MyAppState extends State<MyApp> {
     listViewItem.add("$_newValue : $_result");
   }
 
+  void dropdownOnChanged(String changeValue) {
+    setState(() {
+      _newValue = changeValue;
+      perhitunganSuhu();
+    });
+  }
+
   List<String> listViewItem = List<String>();
 
   var listItem = ["Kelvin", "Reamur", "Fahrenheit"];
@@ -59,21 +67,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Input(inputUserController: inputController),
-              DropdownButton<String>(
-                items: listItem.map((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
-                value: _newValue,
-                onChanged: (String changeValue) {
-                  setState(() {
-                    _newValue = changeValue;
-                    perhitunganSuhu();
-                  });
-                },
-              ),
+              DropdownConversi(listItem: listItem, newValue: _newValue, dropdownOnChanged : dropdownOnChanged),
               Result(result: _result),
               Convert(konvertHandler: perhitunganSuhu,),
               Container(
@@ -83,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
               ),
-              Expanded(
+              Expanded( //memenuhi ruang kosong
                 child: Riwayat(listViewItem: listViewItem),
               ),
             ],
